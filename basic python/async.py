@@ -33,4 +33,4 @@ if __name__ == "__main__":
     start = time.perf_counter()
     asyncio.run(main())
     elapsed = time.perf_counter() - start
-    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+    print(f"{__file__} executed in {elapsed:0.3f} seconds.")
