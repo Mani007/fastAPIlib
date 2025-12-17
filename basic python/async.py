@@ -18,9 +18,9 @@
 #     print(f"{__file__} executed in {elapsed:0.2f} seconds.")
 import asyncio
 import time
-async def count():
+async def count():  # coroutine or async generator function
     print("One")
-    await asyncio.sleep(1)
+    await asyncio.sleep(1) # await means run this task concurrently
     print("Two")
     await asyncio.sleep(1)
 
@@ -31,6 +31,6 @@ if __name__ == "__main__":
     import time
 
     start = time.perf_counter()
-    asyncio.run(main())
+    asyncio.run(main())  # Starting an event loop to run async functions, it control the start and stop of different async function
     elapsed = time.perf_counter() - start
     print(f"{__file__} executed in {elapsed:0.3f} seconds.")

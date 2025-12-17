@@ -4,3 +4,4 @@ Prerequisite:
 - Time module
 - Difference between process, thread, coroutine in Loop
 - Callable objects
+- use of functools
