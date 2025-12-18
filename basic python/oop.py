@@ -9,6 +9,8 @@ class Base:
         
 b1=Base(10,'abc')
 b1.printdata()
+# print(b1.__getstate__)
+locals(b1)
 
 # if __name__ == __main__:
 #     app.run()
