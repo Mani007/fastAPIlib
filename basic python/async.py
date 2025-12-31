@@ -22,7 +22,7 @@ async def count():  # coroutine or async generator function
     print("One")
     await asyncio.sleep(1) # await means run this task concurrently
     print("Two")
-    await asyncio.sleep(1)
+    await asyncio.sleep(1) #suspends the execution of the surrounding coroutine and passes control back to the event loop
 
 async def main():
     await asyncio.gather(count(), count(), count())
