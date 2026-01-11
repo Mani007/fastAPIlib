@@ -1,4 +1,5 @@
 import os
+import json
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
@@ -8,9 +9,20 @@ temp_key = os.getenv('TEMPORARY')
 
 app = FastAPI()
 
-post = {
-    "name":"abc",
-    "age":25,
+post ={
+    "result": [
+    {
+        "id": 0,
+        "name": "Vinson Shepard"
+      },
+      {
+        "id": 1,
+        "name": "Bishop Briggs"
+      },
+      {
+        "id": 2,
+        "name": "Jannie Cummings"
+      }]
 }
 @app.get("/")
 async def read_root():
@@ -18,4 +30,5 @@ async def read_root():
 
 @app.get("/get_post")
 async def get_posts():
+    #return json.dumps(post)
     return post
