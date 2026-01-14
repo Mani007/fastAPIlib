@@ -32,3 +32,12 @@ async def read_root():
 async def get_posts():
     #return json.dumps(post)
     return post
+  
+@app.post("/add_post")
+async def add_posts():
+    #return json.dumps(post)
+    post["result"].append({
+        "id": 3,
+        "name": "ABC"
+      })
+    return post
