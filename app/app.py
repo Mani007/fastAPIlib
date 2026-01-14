@@ -2,10 +2,17 @@ import os
 import json
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import Optional
 
 load_dotenv()
 
 temp_key = os.getenv('TEMPORARY')
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Optional[bool] = None
+
 
 app = FastAPI()
 
@@ -41,3 +48,7 @@ async def add_posts():
         "name": "ABC"
       })
     return post
+  
+@app.get("/items/{item_id}")
+async def read_item(item_id: int):
+    return {"item_id": item_id}
