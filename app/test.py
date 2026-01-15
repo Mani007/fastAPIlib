@@ -4,7 +4,7 @@ def make_request_with_id(id):
     base_url = "http://127.0.0.1:2500/items/"
     response = requests.get(f'{base_url}{id}')
     return response
-def test_search_item_with_sucess():
+def test_search_item_with_success():
     # Arrange:
     
     #Act:

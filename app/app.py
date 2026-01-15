@@ -1,17 +1,13 @@
 import os
 import json
 from dotenv import load_dotenv
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
+from fastapi import FastAPI, Depends
+from pydenticQuery import my_model
+from typing import Annotated
 
 load_dotenv()
 
 temp_key = os.getenv('TEMPORARY')
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Optional[bool] = None
 
 
 app = FastAPI()
@@ -52,3 +48,8 @@ async def add_posts():
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     return {"item_id": item_id}
+  
+@app.get("/pydantic/query")
+async def read_pydantic(query:Annotated[my_model,Depends()]):
+  return {"Results":query}
+  
