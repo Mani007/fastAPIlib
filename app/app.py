@@ -51,5 +51,5 @@ async def read_item(item_id: int):
   
 @app.get("/pydantic/query")
 async def read_pydantic(query:Annotated[my_model,Depends()]):
-  return {"Results":query["id"]}
+  return {"Results":query, "id":query.id}
   
