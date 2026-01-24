@@ -1,9 +1,15 @@
-# playing with sys module
 import sys
-# print(sys.version)
-if len(sys.argv) > 1:
-    print("Arguments passed to the script:")
-    for arg in sys.argv[1:]:
-        print(arg)
-else:
-    print("No arguments provided.")
+n = len(sys.argv)
+
+print("Total arguments passed:", n)
+print("Name of Python script:", sys.argv[0])
+print("Arguments passed:", end=" ")
+
+for i in range(1, n):
+    print(sys.argv[i], end=" ")
+
+Sum = 0
+for i in range(1, n):
+    Sum += int(sys.argv[i])
+
+print(Sum)
