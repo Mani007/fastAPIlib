@@ -1,2 +1,2 @@
 # FastAPI
-The entire API library using fastAPI. 
+The entire API library using fastAPI.
