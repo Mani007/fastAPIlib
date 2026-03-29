@@ -15,5 +15,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# use python main.py to run the server
 if __name__ == '__main__':
     uvicorn.run("app:app",host="127.0.0.1",port=2500,reload=True)
